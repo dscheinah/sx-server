@@ -1,0 +1,30 @@
+{
+    "name": "dscheinah/sx-server",
+    "description": "Implementation of the PSR-15 middleware handling with simple routing.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": "^7.3",
+        "psr/http-server-middleware": "^1.0",
+        "psr/http-server-handler": "^1.0",
+        "dscheinah/sx-container": "^1.0"
+    },
+    "require-dev": {
+        "ext-xdebug": "*",
+        "phpunit/phpunit": "^9.3"
+	},
+    "autoload": {
+        "psr-4": {
+            "Sx\\Server\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sx\\ServerTest\\": "test/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    }
+}
