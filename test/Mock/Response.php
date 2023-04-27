@@ -1,8 +1,10 @@
 <?php
 namespace Sx\ServerTest\Mock;
 
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
+use Sx\Message\StreamFactory;
 
 class Response implements ResponseInterface
 {
@@ -11,12 +13,14 @@ class Response implements ResponseInterface
     public const HEADER_KEY = 'header';
     public const HEADER_VALUE = 'line';
 
-    public function getProtocolVersion()
+    public function getProtocolVersion(): string
     {
+        return '';
     }
 
-    public function withProtocolVersion($version)
+    public function withProtocolVersion($version): MessageInterface
     {
+        return $this;
     }
 
     public function getHeaders(): array
@@ -24,37 +28,44 @@ class Response implements ResponseInterface
         return [self::HEADER_KEY => [self::HEADER_VALUE]];
     }
 
-    public function hasHeader($name)
+    public function hasHeader($name): bool
     {
+        return false;
     }
 
-    public function getHeader($name)
+    public function getHeader($name): array
     {
+        return [];
     }
 
-    public function getHeaderLine($name)
+    public function getHeaderLine($name): string
     {
+        return '';
     }
 
-    public function withHeader($name, $value)
+    public function withHeader($name, $value): MessageInterface
     {
+        return $this;
     }
 
-    public function withAddedHeader($name, $value)
+    public function withAddedHeader($name, $value): MessageInterface
     {
+        return $this;
     }
 
-    public function withoutHeader($name)
+    public function withoutHeader($name): MessageInterface
     {
+        return $this;
     }
 
-    public function getBody(): string
+    public function getBody(): StreamInterface
     {
-        return self::BODY;
+        return (new StreamFactory())->createStream(self::BODY);
     }
 
-    public function withBody(StreamInterface $body)
+    public function withBody(StreamInterface $body): MessageInterface
     {
+        return $this;
     }
 
     public function getStatusCode(): int
@@ -62,11 +73,13 @@ class Response implements ResponseInterface
         return self::STATUS;
     }
 
-    public function withStatus($code, $reasonPhrase = '')
+    public function withStatus($code, $reasonPhrase = ''): ResponseInterface
     {
+        return $this;
     }
 
-    public function getReasonPhrase()
+    public function getReasonPhrase(): string
     {
+        return '';
     }
 }

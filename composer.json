@@ -4,10 +4,11 @@
     "type": "library",
     "license": "GPL-3.0-or-later",
     "require": {
-        "php": "^7.3",
+        "php": "^7.3|^8.0",
         "psr/http-server-middleware": "^1.0",
         "psr/http-server-handler": "^1.0",
-        "dscheinah/sx-container": "^1.0"
+        "dscheinah/sx-container": "^1.0",
+        "dscheinah/sx-message": "^1.1"
     },
     "require-dev": {
         "ext-xdebug": "*",

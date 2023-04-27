@@ -12,24 +12,29 @@ class Uri implements UriInterface
         $this->path = $path;
     }
 
-    public function getScheme()
+    public function getScheme(): string
     {
+        return '';
     }
 
-    public function getAuthority()
+    public function getAuthority(): string
     {
+        return '';
     }
 
-    public function getUserInfo()
+    public function getUserInfo(): string
     {
+        return '';
     }
 
-    public function getHost()
+    public function getHost(): string
     {
+        return '';
     }
 
-    public function getPort()
+    public function getPort(): ?int
     {
+        return null;
     }
 
     public function getPath(): string
@@ -37,43 +42,52 @@ class Uri implements UriInterface
         return $this->path;
     }
 
-    public function getQuery()
+    public function getQuery(): string
     {
+        return '';
     }
 
-    public function getFragment()
+    public function getFragment(): string
     {
+        return '';
     }
 
-    public function withScheme($scheme)
+    public function withScheme($scheme): UriInterface
     {
+        return $this;
     }
 
-    public function withUserInfo($user, $password = null)
+    public function withUserInfo($user, $password = null): UriInterface
     {
+        return $this;
     }
 
-    public function withHost($host)
+    public function withHost($host): UriInterface
     {
+        return $this;
     }
 
-    public function withPort($port)
+    public function withPort($port): UriInterface
     {
+        return $this;
     }
 
-    public function withPath($path)
+    public function withPath($path): UriInterface
     {
+        return $this;
     }
 
-    public function withQuery($query)
+    public function withQuery($query): UriInterface
     {
+        return $this;
     }
 
-    public function withFragment($fragment)
+    public function withFragment($fragment): UriInterface
     {
+        return $this;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return '';
     }
